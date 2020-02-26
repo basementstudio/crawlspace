@@ -9,7 +9,7 @@ class CustomMaterial extends ShaderMaterial {
       varying vec2 vUv;
       void main() {
         vec3 pos = position;
-        pos.y = pos.y + ((sin(uv.x * 3.1415926535897932384626433832795) * shift * 5.0) * 0.125);
+        //pos.y = pos.y + ((sin(uv.x * 3.1415926535897932384626433832795) * shift * 5.0) * 0.125);
         vUv = uv;
         gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.);
       }`,
@@ -21,9 +21,9 @@ class CustomMaterial extends ShaderMaterial {
       uniform float opacity;
       varying vec2 vUv;
       void main() {
-        float angle = 1.55;
-        vec2 p = (vUv - vec2(0.5, 0.5)) * (1.0 - scale) + vec2(0.5, 0.5);
-        vec2 offset = shift / 4.0 * vec2(cos(angle), sin(angle));
+        float angle = 1.85;
+        vec2 p = (vUv - vec2(0.85, 0.85)) * (1.0 - scale) + vec2(0.85, 0.85);
+        vec2 offset = shift / 4.5 * vec2(cos(angle), sin(angle));
         vec4 cr = texture2D(texture, p + offset);
         vec4 cga = texture2D(texture, p);
         vec4 cb = texture2D(texture, p - offset);

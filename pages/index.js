@@ -193,49 +193,6 @@ function App() {
       </div>
       <div className="frame">
         <h1 className="frame__title">Scroll, Refraction and Shader Effects</h1>
-        <div className="frame__links">
-          <a
-            className="frame__link"
-            href="http://tympanus.net/Tutorials/PhysicsMenu/"
-          >
-            Previous demo
-          </a>
-          <a
-            className="frame__link"
-            href="https://tympanus.net/codrops/?p=45441"
-          >
-            Article
-          </a>
-          <a
-            className="frame__link"
-            href="https://github.com/drcmda/the-substance"
-          >
-            GitHub
-          </a>
-        </div>
-        <div className="frame__nav">
-          <a className="frame__link" href="#00">
-            "intro"
-          </a>
-          <a className="frame__link" href="#01">
-            "01"
-          </a>
-          <a className="frame__link" href="#02">
-            "02"
-          </a>
-          <a className="frame__link" href="#03">
-            "03"
-          </a>
-          <a className="frame__link" href="#04">
-            "04"
-          </a>
-          <a className="frame__link" href="#05">
-            "05"
-          </a>
-          <a className="frame__link" href="#07">
-            "06"
-          </a>
-        </div>
       </div>
     </>
   )

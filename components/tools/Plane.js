@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react"
+import React, { forwardRef, useRef, useState } from "react"
 import { useFrame } from "react-three-fiber"
 import lerp from "lerp"
 import "../materials/CustomMaterial"
@@ -16,18 +16,27 @@ const Plane = forwardRef(
       material.current.scale = lerp(
         material.current.scale,
         offsetFactor - top.current / ((pages - 1) * viewportHeight),
-        0.1
+        0.05
       )
       material.current.shift = lerp(
         material.current.shift,
         (top.current - last) / shift,
-        0.1
+        0.05
       )
       last = top.current
     })
 
+    const [hovered, setHover] = useState(false)
+
     return (
-      <mesh ref={ref} {...props}>
+      <mesh
+        {...props}
+        ref={ref}
+        onWheel={e => console.log("wheel spins")}
+        onPointerEnter={e => console.log("enter")}
+        onPointerLeave={e => console.log("leave", e)}
+        onUpdate={self => console.log("props have been updated")}
+      >
         <planeBufferGeometry attach="geometry" args={args} />
         <customMaterial
           ref={material}
