@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { gsap } from "gsap/all"
+import gsap from "gsap"
 import { isBrowser } from "react-device-detect"
 import styles from "./collapsible.module.css"
 
