@@ -1,0 +1,40 @@
+import dynamic from "next/dynamic"
+import { useEffect } from "react"
+const LocomotiveScroll = dynamic(() => import("locomotive-scroll"), {
+  ssr: false
+})
+
+const Scroll = (callbacks) => {
+  useEffect(() => {
+    let locomotiveScroll
+
+    import("locomotive-scroll").then((Scroll) => {
+      locomotiveScroll = new Scroll.default({
+        el: document.querySelector("#container"),
+        smooth: true,
+        smoothMobile: false,
+        getDirection: true,
+        touchMultiplier: 2.5,
+        lerp: 0.15
+      })
+
+      locomotiveScroll.update()
+
+      // Exposing to the global scope for ease of use.
+      window.scroll = locomotiveScroll
+
+      locomotiveScroll.on("scroll", (func) => {
+        // Update `data-direction` with scroll direction.
+        document.documentElement.setAttribute("data-direction", func.direction)
+      })
+    })
+
+    return () => {
+      if (locomotiveScroll) locomotiveScroll.destroy()
+    }
+  }, [callbacks])
+
+  return null
+}
+
+export default Scroll
