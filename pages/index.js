@@ -13,7 +13,10 @@ const IndexPage = () => (
     </p>
     <p>
       In our case <code>window.scroll.update()</code>.{" "}
-      <a href="">See the `collapsible` component</a>.
+      <a href="https://github.com/basementstudio/crawlspace/blob/with-locomotive-scroll/components/Collapsible/index.js">
+        See the `collapsible` component
+      </a>
+      .
     </p>
     <Collapsible>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. A libero
