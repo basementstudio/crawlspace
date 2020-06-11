@@ -1,0 +1,153 @@
+@import "./reset.css";
+@import "./scroll.css";
+
+/* Global Styles
+   ========================================================================== */
+:root {
+  /* Color Scheme */
+  --black: #000;
+  --white: #fff;
+
+  /* Fonts */
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+
+  /* Header */
+  --header-min-height: 125px;
+  --header-min-height-tight: 100px;
+
+  /* Misc */
+  --y-spacer: 50px;
+  --y-spacer-lg: 135px;
+  --x-spacer: 4.375vw;
+  --radius: 10px;
+  --radius-s: 2px;
+
+  font-variant-ligatures: common-ligatures;
+}
+
+.full-height {
+  min-height: 100vh;
+  /* fix for safari mobile */
+  min-height: -webkit-fill-available;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+}
+
+h5,
+h6,
+p {
+  font-family: var(--font-secondary);
+}
+
+h1 {
+  letter-spacing: -6px;
+}
+
+h2,
+h3,
+h5,
+h4 {
+  letter-spacing: -3px;
+}
+
+h6,
+p {
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: 55px;
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 0.92;
+}
+
+h3 {
+  font-size: 42px;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 36px;
+  line-height: 1.13;
+}
+
+h5 {
+  font-size: 31px;
+  line-height: 1.16;
+}
+
+h6 {
+  font-size: 27px;
+  line-height: 1.35;
+}
+
+p {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+p.s {
+  font-size: 21px;
+  line-height: 1.43;
+}
+
+p.xs {
+  font-size: 15px;
+  line-height: 1.33;
+  letter-spacing: 0;
+}
+
+p.xxs {
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+a {
+  position: relative;
+}
+
+a:not(.no-decoration):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.075em;
+  min-height: 1px;
+  transform-origin: right;
+  transform: scaleX(0);
+  background-color: currentColor;
+  transition: transform 0.95s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+a:not(.no-decoration):hover:after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+@media (max-width: 800px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
